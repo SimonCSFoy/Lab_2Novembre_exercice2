@@ -7,7 +7,9 @@
             while (true)
             {
                 int nombre = ObtenirEntierUtilisateur("Entrez un nombre entier (10 caractères maximum) : ");
-                if (EstPair(nombre))
+
+                bool estPair = EstPair(nombre);
+                if (estPair)
                 {
                     Console.WriteLine($"Le nombre {nombre} est pair");
                 }
@@ -20,8 +22,9 @@
 
         public static int ObtenirEntierUtilisateur(string message)
         {
-            bool conversionReussie = false;
             int nombre = 0;
+            bool conversionReussie = false;
+
             while(conversionReussie != true)
             {
                 string entreeUtilisateur = ObtenirStringUtilisateur(message);
